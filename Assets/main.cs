@@ -179,13 +179,15 @@ public class main : MonoBehaviour
 			}
 		}
 		else {
-			if (winner != '\0') {
-					Text textObject = GameObject.Find("Text").GetComponent<Text>();
-					textObject.text = "Winner: " + (currentPlayer == 'X' ? "Player1".ToString() : "Player2".ToString());
-				}
-			else if (isBoardFull) {
-					Text textObject = GameObject.Find("Text").GetComponent<Text>();
-					textObject.text = "Tie";
+			if (winner != '\0')
+			{
+				Text textObject = GameObject.Find("Text").GetComponent<Text>();
+				textObject.text = (currentPlayer == 'X' ? "Player1" : "Player2") + " wins!";
+			}
+			else if (isBoardFull)
+			{
+				Text textObject = GameObject.Find("Text").GetComponent<Text>();
+				textObject.text = "Tie";
 			}
 		}
 	}
